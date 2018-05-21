@@ -1,5 +1,9 @@
 package People;
-
+/**
+ * 这是abstract Person class
+ * @author JINDONG ZHANG
+ * @version	V1.0
+ */
 import Profile.Profile;
 
 /*
@@ -9,8 +13,6 @@ public abstract class Person{
 	private int age;//它的年龄
 	private String name;//这个人的名字
 	private String general;//他的性别
-	
-	
 	Profile profile = new Profile();
 	
 	/*
@@ -37,6 +39,8 @@ public abstract class Person{
 		}
 		return a;
 	}
+	
+
 	/*
 	 * 设置List文件
 	 * 逻辑:	
@@ -51,16 +55,19 @@ public abstract class Person{
 			profile.setSiblingsList(anyList);
 		}
 	}
-	//增加一个盆友	在创建一个指定岁数的对象以后 让他们来实现interface
-	/*public void addFriend(String name){
-		profile.addFriend(name);
+
+	public void setPrivacy(boolean option) {
+		profile.setPrivacy(option);
 	}
-	//增加一个展示所以朋友
-	public void showFriend(){
-		profile.showFriend();
-	}*/
-	//ArrayList<Profile> profileInPerson = new ArrayList<Profile>();
-	//这个变量是用于设置储存一个人的文档
+	
+	public boolean getPrivacy() {
+		return profile.getPrivacy();
+		
+	}
+	
+	public void getPhoto() {
+		profile.getPhoto();	
+	}
 	
 	//以下方法是Person的有参构造
 	Person(int age, String name, String general) {
@@ -101,8 +108,6 @@ public abstract class Person{
 	 * 显示
 	 * 	B1:		父母 ,兄弟
 	 * */
-	
-	
 	
 	
 	//以下是基础返回 其中 不包括profile 值得返回

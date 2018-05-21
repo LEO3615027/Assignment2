@@ -1,5 +1,9 @@
 package MiniNet;
-
+/**
+ * 这是TestDemo class
+ * @author JINDONG ZHANG
+ * @version	V1.0
+ */
 import java.util.ArrayList;
 
 import People.Adult;
@@ -7,7 +11,8 @@ import People.Child;
 import People.Person;
 import People.YoungChild;
 import Profile.Helper;
-import SocailNet.SocialNet;
+import SocialNet.SocialNet;
+
 
 public class TestDemo {
 
@@ -17,19 +22,73 @@ public class TestDemo {
 		 * 通过调用ProfileHelper ph方法来对Person中的profile进行操作
 		 * 通过SocialNet sn
 		 * */
+		/*
+		 * 用法须知p2:
+		 * 	ph.show(array);//展示所以人
+		 * 	ph.checkPeople(array, "Min");//Scanner改进输入
+		 * 		作用:获得index值
+		 * 		逻辑:之后通过array.get(index)方法  ,进行后续操作
+		 * 			1、profile 关联操作
+		 * 			2、但凡是需要输入人 【Person类	 的方法的关联操作
+		 * 		
+		 * */
 		Helper ph = new Helper();
-		SocialNet sn = new SocialNet();
-		Person p = new Adult(13, "Lee", "Fe");
-		sn.getArray();
-		ph.add(new Adult(13, "Lee", "Fe"), sn.getArray());
-		ph.show(sn.getArray());
+		SocialNet sn = new SocialNet();//地址值指向地址值
+		ArrayList<Person> array = sn.getArray();//嫌麻烦就用array
+		/*sn.getArray().add(new Adult(13, "Lee", "Fe"));
+		sn.getArray().add(new Adult(13, "Min", "Fe"));
+		sn.getArray().add(new Adult(13, "Lee", "Fe"));
+		sn.getArray().add(new Adult(13, "TEA", "Fe"));
+		for(Person p:array) {
+			System.out.println(p);
+		}
+		System.out.println("-----------------");
+		array.remove(2);
+		for(Person p:sn.getArray()) {
+			System.out.println(p);
+		}*/
+		//不嫌麻烦就直接用 sn.getArray()
+		// Person p = new Adult(13, "Lee", "Fe");
+		/*ph.add(new Adult(13, "Lee", "Fe"), sn.getArray());
+		ph.add(new Adult(13, "Min", "Fe"), sn.getArray());
+		ph.add(new Adult(14, "Awe", "Me"), sn.getArray());
+		ph.show(array);
+		ph.checkPeople(array, "Min");
+		//array.get(2);
+		ph.setStatement(array.get(2), "NI hao me?");
+		System.out.println(ph.getStatement(array.get(2)));*/
+		//ph.delete(sn.getArray(), 2);
+		//ph.show(array);
+		/*int a = ph.getIndex();
+		int a1 = ph.checkPeople(array, "Awe");
+		int a2 = ph.getIndex();
+		System.out.println("a :"+a);
+		System.out.println("a1 :"+a1);
+		System.out.println("a2 :"+a2);*/
+		/*if(a == -1){
+			System.out.println("a :"+a);
+			//System.out.println("查无此人");//这里有个新变量来自于用户输入
+		}else{
+			System.out.println("a :"+a);
+			//System.out.println("Lee");//这里有个新变量来自于用户输入
+		}*/
+		//Person p = new Adult(23, "Min", "Fe");
+		/*String ListType = "";
+		for (int x = 1; x <= 6; x++) {
+			if(x == 3) {
+				String a;
+				a = "dada";
+				ListType += a;
+			}
+		}*/
+		/*ph.setStatement(p, "I love U");
+		System.out.println(p);*/
 		
 		
 		
-		
-		
-		
-		
+		int a= 0;
+		a = Math.abs(3-11);
+		System.out.println(a);
 		
 		
 		
@@ -153,8 +212,6 @@ public class TestDemo {
 			}*/
 
 		
-		
-		
+			
 	}
-	
 }

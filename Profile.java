@@ -1,5 +1,9 @@
 package Profile;
-
+/**
+ * 这是Profile class
+ * @author JINDONG ZHANG
+ * @version	V1.0
+ */
 public class Profile{
 	/*
 	 * 以下是 profile中的各类列表：
@@ -15,6 +19,7 @@ public class Profile{
 	String classmateRelations = "";//设置储存同学
 	String colleagueRelations = "";//设置储存同事
 	String partner = "";//设置储存情侣 1个
+	String childrenList = "";//储存一个小孩
 	
 	//以下是基础set/get
 	public String getParentsList() {
@@ -53,30 +58,42 @@ public class Profile{
 	public void setPartner(String partner) {
 		this.partner = partner;
 	}
-	public void setStatus(String status){
-		this.status = status;
+	
+	public void setchildrenList(String childrenList) {
+		this.childrenList = childrenList;
 	}
 	
+	public String getchildrenList() {
+		return childrenList;
+	}
 	/*
 	 * 以下功能是设置声明状态
 	 * */
 	String status = "";//这是一句话，声明现在的状态
 	
+	public void setStatus(String status){
+		this.status = status;
+	}
+	public String getStatus(){
+		return status;
+	}
 	/*
 	 * 显示和隐藏status的选项功能
 	 * */
-	int SH = 1;//显示
-	public void setSH(int SH){
-		this.SH = SH;
+	boolean option;//显示
+	
+	public void setPrivacy(boolean option){
+		this.option = option;
 	}
-	/*以下功能用于展示之后的调用展示status的声明
+	
+	public boolean getPrivacy(){
+		return option;
+	}
+	/*
+	 * 以下功能用于展示之后的调用展示status的声明
 	 * */
-	public void showSH(){
-		if(SH == 1){
-			System.out.println(status);
-		}else{
-			System.out.println("I do not want to show my status");
-		}
+	public void getPhoto() {
+		System.out.println("获得Photo");
 	}
 	
 	

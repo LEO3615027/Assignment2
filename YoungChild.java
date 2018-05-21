@@ -1,6 +1,14 @@
 package People;
-
+/**
+ * ÕâÊÇYoungChild class
+ * @author JINDONG ZHANG
+ * @version	V1.0
+ */
 public class YoungChild extends Person{
+	/*
+	 *YoungChild:
+	 * age >=0 && age <3
+	 * */
 
 	public YoungChild(int age, String name, String general) {
 		super(age, name, general);

@@ -1,13 +1,40 @@
 package People;
 
-import Optional_Interface.Adult_Inter;
+import Optional_Interface.Statement_Inter;
 
-public class Adult extends Person{
+/**
+ * 这是Adult class
+ * @author JINDONG ZHANG
+ * @version	V1.0
+ */
 
+
+public class Adult extends Person implements Statement_Inter{
+	/*
+	 *Adult:
+	 * age >=17
+	 * */
 	public Adult(int age, String name, String general) {
 		super(age, name, general);
 		// TODO Auto-generated constructor stub
 	}// 当创建一个成人的时候需要输入它的年龄, 名字 ， 性别
+
+	@Override
+	public void setStatus(String statement) {
+		// TODO Auto-generated method stub
+		profile.setStatus(statement);
+	}
+
+	@Override
+	public String toString() {
+		return " getStatus()=" + getStatus() + ", toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public String getStatus() {
+		return profile.getStatus();
+		// TODO Auto-generated method stub
+	}
 
 	/*
 	 * 增加的变量代码 Scanner sc = new Scanner(System.in); String name = sc.nextLine();
@@ -20,7 +47,7 @@ public class Adult extends Person{
 	 * A2:	朋友,同学 ,
 	 * A3:	同事 ,情人
 	 */
-
+	
 	
 
 	/*
