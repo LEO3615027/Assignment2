@@ -1,4 +1,4 @@
-package MyException;
+package myException;
 /**
  * ’‚ «NoParentException class
  * @author JINDONG ZHANG

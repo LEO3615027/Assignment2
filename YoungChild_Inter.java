@@ -1,4 +1,4 @@
-package Optional_Interface;
+package optional_Interface;
 
 public interface YoungChild_Inter {
 	public abstract void addParents(String name);//ËùÓĞÈË

@@ -1,4 +1,4 @@
-package MyException;
+package myException;
 /**
  * ’‚ «NoAvailableException class
  * @author JINDONG ZHANG

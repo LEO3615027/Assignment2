@@ -1,4 +1,4 @@
-package MyException;
+package myException;
 /**
  * ’‚ «NotToBeColleaguesException class
  * @author JINDONG ZHANG

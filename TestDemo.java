@@ -1,4 +1,4 @@
-package MiniNet;
+package miniNet;
 /**
  * 这是TestDemo class
  * @author JINDONG ZHANG
@@ -6,12 +6,15 @@ package MiniNet;
  */
 import java.util.ArrayList;
 
-import People.Adult;
-import People.Child;
-import People.Person;
-import People.YoungChild;
-import Profile.Helper;
-import SocialNet.SocialNet;
+import gUI_Interface.MainJFrame;
+import myException.NoSuchAgeException;
+import myException.TooYoungException;
+import peopleManager.Adult;
+import peopleManager.Child;
+import peopleManager.Person;
+import peopleManager.YoungChild;
+import profileManager.Helper;
+import socialNet.SocialNet;
 
 
 public class TestDemo {
@@ -32,10 +35,45 @@ public class TestDemo {
 		 * 			2、但凡是需要输入人 【Person类	 的方法的关联操作
 		 * 		
 		 * */
-		Helper ph = new Helper();
+		/*Helper hp = new Helper();
+		int age = -3;
+		boolean flage = hp.beforeSetAge(age);
+		System.out.println(flage);*/
+		//Helper hp = new Helper();
+		/*int age = -3;
+		try {
+			hp.beforeSetAge(age);
+		} catch (NoSuchAgeException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("--------------");*/
+		ArrayList<Person> array = new ArrayList();
+		MainJFrame mini = new MainJFrame(array);
+		mini.run();
+		
+		
+		
+/*		Helper hp = new Helper();
+		try {	//测试结果:当第一条语句不通过时候终断之后的语句
+//			hp.beStart(1, 2);
+			myException.TooYoungException: 年龄太小无法交朋友
+			at profileManager.Helper.beStart(Helper.java:320)
+			at miniNet.TestDemo.main(TestDemo.java:59)
+			System.out.println("----第一次--------");
+			hp.beStart(2, 2);
+			//----第一次--------
+			----第二次-------
+			System.out.println("----第二次-------");
+		} catch (TooYoungException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}*/
+		
+		/*Helper ph = new Helper();
 		SocialNet sn = new SocialNet();//地址值指向地址值
-		ArrayList<Person> array = sn.getArray();//嫌麻烦就用array
-		/*sn.getArray().add(new Adult(13, "Lee", "Fe"));
+		ArrayList<Person> array = new ArrayList();//嫌麻烦就用array
+*/		/*sn.getArray().add(new Adult(13, "Lee", "Fe"));
 		sn.getArray().add(new Adult(13, "Min", "Fe"));
 		sn.getArray().add(new Adult(13, "Lee", "Fe"));
 		sn.getArray().add(new Adult(13, "TEA", "Fe"));
@@ -86,9 +124,9 @@ public class TestDemo {
 		
 		
 		
-		int a= 0;
+		/*int a= 0;
 		a = Math.abs(3-11);
-		System.out.println(a);
+		System.out.println(a);*/
 		
 		
 		

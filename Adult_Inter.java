@@ -1,4 +1,4 @@
-package Optional_Interface;
+package optional_Interface;
 
 public interface Adult_Inter extends Child_Inter{
 	

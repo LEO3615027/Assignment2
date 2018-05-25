@@ -1,6 +1,6 @@
-package People;
+package peopleManager;
 
-import Optional_Interface.Statement_Inter;
+import optional_Interface.Statement_Inter;
 
 /**
  * 这是Adult class
@@ -24,17 +24,19 @@ public class Adult extends Person implements Statement_Inter{
 		// TODO Auto-generated method stub
 		profile.setStatus(statement);
 	}
-
-	@Override
-	public String toString() {
-		return " getStatus()=" + getStatus() + ", toString()=" + super.toString() + "]";
-	}
-
+	
 	@Override
 	public String getStatus() {
 		return profile.getStatus();
 		// TODO Auto-generated method stub
 	}
+
+	@Override
+	public String toString() {
+		return "Adult Nam: "+getName()+"; General: "+getGeneral()+"; Age: " + getAge();
+	}
+
+
 
 	/*
 	 * 增加的变量代码 Scanner sc = new Scanner(System.in); String name = sc.nextLine();

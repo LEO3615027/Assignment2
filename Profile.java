@@ -1,4 +1,4 @@
-package Profile;
+package profileManager;
 /**
  * 这是Profile class
  * @author JINDONG ZHANG
@@ -13,13 +13,13 @@ public class Profile{
 	 * 	比如:在成年人级别有:增加朋友的方法而在小小孩级别没有该方法
 	 */	
 	
-	String parentsList = "你的父母是:";//设置储存家长 2个
-	String SiblingsList = "你的兄弟姐妹有: ";//设置储存兄弟姐妹
-	String friendList = "";// 中的朋友列表
-	String classmateRelations = "";//设置储存同学
-	String colleagueRelations = "";//设置储存同事
-	String partner = "";//设置储存情侣 1个
-	String childrenList = "";//储存一个小孩
+	String parentsList = null;//设置储存家长 2个-------1
+	String SiblingsList = null;//设置储存兄弟姐妹------2
+	String friendList = null;// 中的朋友列表----------3
+	String classmateRelations = null;//设置储存同学---4
+	String colleagueRelations = null;//设置储存同事---5
+	String partner = null;//设置储存情侣 1个-----------6
+	String childrenList = null;//储存一个小孩---------7
 	
 	//以下是基础set/get
 	public String getParentsList() {

@@ -1,4 +1,4 @@
-package Optional_Interface;
+package optional_Interface;
 /**
  * ’‚ «Statement_Inter interface
  * @author JINDONG ZHANG

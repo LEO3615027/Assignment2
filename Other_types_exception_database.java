@@ -1,4 +1,4 @@
-package MyException;
+package myException;
 /**
  * ’‚ «Other_types_exception_database class
  * @author JINDONG ZHANG

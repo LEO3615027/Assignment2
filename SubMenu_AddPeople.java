@@ -5,7 +5,11 @@ import javax.swing.JOptionPane;
 import myException.NoSuchAgeException;
 import java.util.ArrayList;
 
+import peopleManager.Adult;
+import peopleManager.Child;
 import peopleManager.Person;
+import peopleManager.YoungChild;
+import profileManager.Helper;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -15,13 +19,15 @@ import peopleManager.Person;
 /**
  *
  * @author JINDONG ZHANG!
- * @version 1.0
+ * @version 1.1
  */
 public class SubMenu_AddPeople extends javax.swing.JFrame {
 	ArrayList<Person> array = new ArrayList();
+	Helper hp = new Helper();
     /**
      * Creates new form SubMenu_AddPeople
      */
+	//有参和无参构造方法
     public SubMenu_AddPeople() {
         initComponents();
         init();
@@ -30,6 +36,8 @@ public class SubMenu_AddPeople extends javax.swing.JFrame {
         initComponents();
         init(array);
     }
+    
+    //初始化方法A B
     private void init() {
         this.setTitle("---Add People---");
         this.setResizable(false);
@@ -40,8 +48,16 @@ public class SubMenu_AddPeople extends javax.swing.JFrame {
         this.setResizable(false);
         GUIHelper.setFrameCenter(this);
         this.array = array;
+         System.out.println("Add People:传值测试");
+        for(Person p :array){
+            System.out.println(p);
+        }
+         System.out.println("-------Add People:传值测试结束------------");
     }
     
+    
+   /* 
+    * //初始化成员变量	(通过直接传值操作,已经成员变量显得不太重要)
     public String personName = null;
     public int personAge= 0;
     public String personGender = null;
@@ -54,7 +70,7 @@ public class SubMenu_AddPeople extends javax.swing.JFrame {
     }
     public String getpersonGender(){
 		return personGender;
-    }
+    }*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -94,12 +110,7 @@ public class SubMenu_AddPeople extends javax.swing.JFrame {
         jButton1.setText("Create");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-					jButton1ActionPerformed(evt);
-				} catch (NoSuchAgeException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+                jButton1ActionPerformed(evt);
             }
         });
 
@@ -175,15 +186,17 @@ public class SubMenu_AddPeople extends javax.swing.JFrame {
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
-
+    
+    //以下是关闭窗口操作,如果关闭,新建窗口,并设置窗口可见
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        MainMenu s = new MainMenu(array);
+        MainJFrame s = new MainJFrame(array);
         s.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws NoSuchAgeException {//GEN-FIRST:event_jButton1ActionPerformed
-        //获得名字,年龄,性别
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt){//GEN-FIRST:event_jButton1ActionPerformed
+        //点击Create Buttom 后
+    	//获得名字,年龄,性别
         String name = this.name.getText().trim();
         String ageString = this.age.getText().trim();
         String gender = this.gender.getSelectedItem().toString();
@@ -199,7 +212,7 @@ public class SubMenu_AddPeople extends javax.swing.JFrame {
         //四则方法
         String regx = "[A-Z]{1}[a-z]{2,7}";//名字
         String regx2 = "\\d+";//年龄
-
+        
         //数据校验-名字
         if (!name.matches(regx)) {
             this.name.setText("");
@@ -207,20 +220,45 @@ public class SubMenu_AddPeople extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please strat with capture leter ,and 2~7 small leter");
             return;//JOpt 有弹窗方法
         }
-
+        
+        
         //数据校验-年龄
         if (!ageString.matches(regx2)) {
-            JOptionPane.showMessageDialog(this, "请输入数字?");
+            JOptionPane.showMessageDialog(this, "请输入数字");
             this.age.setText("");
             this.age.requestFocus();
-            throw new NoSuchAgeException("SuchAgeException");
+            return;
             //return;//JOpt 有弹窗方法
         }
-
-        //把年龄转换成数字
         int age = Integer.parseInt(ageString);
         
-        personName = name;
+        //校验年龄之Helper
+        try {
+			hp.beforeSetAge(age);
+		} catch (NoSuchAgeException e) {
+			// TODO Auto-generated catch block
+			JOptionPane.showMessageDialog(this, "年龄不合实际");
+			e.printStackTrace();
+			return;
+		}
+        
+        if(age < 3) {
+        	Person p = new YoungChild(age, name, gender);
+        	hp.add(p, array);
+        }else if(age >= 17){
+        	Person p = new Adult(age, name, gender);
+        	hp.add(p, array);
+        }else {
+        	Person p = new Child(age, name, gender);
+        	hp.add(p, array);
+        }
+        for(Person p : array) {	
+    		System.out.println(p);
+    	}
+        
+        //把年龄转换成数字
+        
+        
         //System.out.println("gender: "+gender+", name: "+name+", age:" + age);
 
         //将字符串转化为数字

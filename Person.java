@@ -1,10 +1,5 @@
-package People;
-/**
- * 这是abstract Person class
- * @author JINDONG ZHANG
- * @version	V1.0
- */
-import Profile.Profile;
+package peopleManager;
+import profileManager.Profile;
 
 /*
  * Person类使用注意事项:在创建该类之前需要先判断年龄的大小	int age
@@ -27,16 +22,27 @@ public abstract class Person{
 	 * 	x参数详情:【同样适用于show() 方法) 
 	 * 		1.parentsList	2.SiblingsList	3.friendList
 	 * 		4.classmateRelations			5.colleagueRelations
-	 * 		6.partner
+	 * 		6.partner		7.children
 	 * 	tip:x参数必须一致
 	 * */
 	public String getList(int keyEnter){
 		String a = null;
 		if(keyEnter ==1){
 			a = profile.getParentsList();
-		}else{
+		}else if(keyEnter ==2){
 			a = profile.getSiblingsList();
+		}else if(keyEnter ==3){
+			a = profile.getFriendList();
+		}else if(keyEnter ==4){
+			a = profile.getClassmateRelations();
+		}else if(keyEnter ==5){
+			a = profile.getColleagueRelations();
+		}else if(keyEnter ==6){
+			a = profile.getPartner();
+		}else if(keyEnter ==7){
+			a = profile.getchildrenList();
 		}
+
 		return a;
 	}
 	
@@ -51,8 +57,18 @@ public abstract class Person{
 	public void setList(int keyEnter2,String anyList){
 		if(keyEnter2 == 1){
 			profile.setParentsList(anyList);
-		}else{
+		}else if(keyEnter2==2) {
 			profile.setSiblingsList(anyList);
+		}else if(keyEnter2 ==3){
+			profile.setFriendList(anyList);
+		}else if(keyEnter2 ==4){
+			profile.setClassmateRelations(anyList);
+		}else if(keyEnter2 ==5){
+			profile.setColleagueRelations(anyList);
+		}else if(keyEnter2 ==6){
+			profile.setPartner(anyList);
+		}else if(keyEnter2 ==7){
+			profile.setchildrenList(anyList);
 		}
 	}
 

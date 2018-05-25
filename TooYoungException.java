@@ -1,4 +1,4 @@
-package MyException;
+package myException;
 /**
  * ’‚ «TooYoungException class
  * @author JINDONG ZHANG

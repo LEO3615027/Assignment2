@@ -1,4 +1,4 @@
-package gUI_Interface;
+//package gUI_Interface;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,7 +12,8 @@ import peopleManager.Person;
 /**
  *
  * @author JINDONG ZHANG!
- * @version 1.0
+ * @version 1.1
+ * @param 放弃使用这个
  */
 public class SubMenu_SelectPeople_DefineRe extends javax.swing.JFrame {
 	ArrayList<Person> array = new ArrayList();

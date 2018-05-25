@@ -1,4 +1,4 @@
-package MyException;
+package myException;
 /**
  * ’‚ «NotToBeCoupledException class
  * @author JINDONG ZHANG

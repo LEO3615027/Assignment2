@@ -1,4 +1,4 @@
-package MyException;
+package myException;
 /**
  * ’‚ «NoSuchAgeException class
  * @author JINDONG ZHANG

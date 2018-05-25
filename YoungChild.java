@@ -1,4 +1,4 @@
-package People;
+package peopleManager;
 /**
  * ’‚ «YoungChild class
  * @author JINDONG ZHANG
@@ -18,6 +18,6 @@ public class YoungChild extends Person{
 	@Override
 	public String toString() {
 		return "YoungChild Name=" + getName() + ", General="
-				+ getGeneral() + ", Age=" + getAge() + "]";
+				+ getGeneral() + ", Age=" + getAge() ;
 	}
 }

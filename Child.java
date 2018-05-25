@@ -1,4 +1,4 @@
-package People;
+package peopleManager;
 /**
  * ’‚ «Child class
  * @author JINDONG ZHANG

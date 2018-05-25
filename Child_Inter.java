@@ -1,4 +1,4 @@
-package Optional_Interface;
+package optional_Interface;
 
 public interface Child_Inter{
 	public abstract void addFriend(String name);//³ýÐ¡Ð¡º¢
